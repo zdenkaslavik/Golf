@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Golf Flip Boxes</title>
+<style>
+  /* Full page background */
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url(https://lh3.googleusercontent.com/gps-cs-s/AHRPTWm5P33DO2mQEEJ43cf3AMfMnTz-Ha1PtAfj2PcJphU8tI2_DH6ELVg4_qP1lSZZLcb2m9Qrzow9ysS5JerwWitH-BYcE2teZHBFK2hD4eGGzSIkOdhPXlk3XW9S2ctFxG8lelbyyA=s1360-w1360-h1020-rw) no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 180px);
+    grid-template-rows: repeat(2, 180px);
+    gap: 70px 60px;
+  }
+  .flip-box {
+    width: 180px;
+    height: 180px;
+    perspective: 1000px;
+    cursor: pointer;
+  }
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    border-radius: 50%;
+  }
+  .flip-box.flipped .flip-box-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 20px;
+    text-align: center;
+    backface-visibility: hidden;
+    background: url('images/golfball.jpg') center center;
+    opacity: 0.6;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .flip-box-back {
+    transform: rotateY(180deg);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="flip-box" onclick="this.classList.toggle('flipped')">
+    <div class="flip-box-inner">
+      <div class="flip-box-front">Fun Fact #1</div>
+      <div class="flip-box-back">The dimples on a golf ball create lift and reduce drag.</div>
+    </div>
+  </div>
+  <div class="flip-box" onclick="this.classList.toggle('flipped')">
+    <div class="flip-box-inner">
+      <div class="flip-box-front">Fun Fact #2</div>
+      <div class="flip-box-back">Golf is one of the few sports played on natural terrain.</div>
+    </div>
+  </div>
+  <div class="flip-box" onclick="this.classList.toggle('flipped')">
+    <div class="flip-box-inner">
+      <div class="flip-box-front">Fun Fact #3</div>
+      <div class="flip-box-back">The longest recorded drive is over 450 yards.</div>
+    </div>
+  </div>
+  <div class="flip-box" onclick="this.classList.toggle('flipped')">
+    <div class="flip-box-inner">
+      <div class="flip-box-front">Fun Fact #4</div>
+      <div class="flip-box-back">Golf balls were originally made of hardwood.</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
