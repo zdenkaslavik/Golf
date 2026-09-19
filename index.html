@@ -16,6 +16,19 @@
     justify-content: center;
     align-items: center;
   }
+@media (max-width: 480px) {
+  .container {
+    grid-template-columns: 1fr;  /* single column */
+    grid-template-rows: repeat(4, 180px); /* 4 stacked cards */
+    gap: 40px 0; /* less horizontal gap since single column */
+  }
+  .flip-box {
+    width: 140px;
+    height: 140px;
+  }
+  .flip-box-inner {
+    border-radius: 50%;
+  }
 
   
   .container {
